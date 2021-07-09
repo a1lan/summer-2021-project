@@ -1,5 +1,8 @@
 package com.family_server.model;
 
+import javax.persistence.Entity;
+
+
 public class TestResponse {
 
     private final long id;
