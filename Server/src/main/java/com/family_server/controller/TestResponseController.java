@@ -1,10 +1,12 @@
-package com.family_server.restservice;
+package com.family_server.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.family_server.model.TestResponse;
 
 @RestController
 public class TestResponseController {

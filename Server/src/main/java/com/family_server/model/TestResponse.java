@@ -1,4 +1,4 @@
-package com.family_server.restservice;
+package com.family_server.model;
 
 public class TestResponse {
 

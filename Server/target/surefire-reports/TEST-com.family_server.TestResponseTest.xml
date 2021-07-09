@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.family_server.restservice.RestServiceApplicationTests" time="1.544" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.family_server.TestResponseTest" time="0.001" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="contextLoads" classname="com.family_server.restservice.RestServiceApplicationTests" time="0.173"/>
+  <testcase name="test1" classname="com.family_server.TestResponseTest" time="0"/>
 </testsuite>
