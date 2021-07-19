@@ -1,13 +1,12 @@
-//package com.afa.springserver;
+//package com.afa.model;
 //
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
 //
 //@SpringBootTest
-//class SpringServerApplicationTests {
+//class CourseEntityTests {
 //
 //    @Test
 //    void contextLoads() {
 //    }
-//
 //}
