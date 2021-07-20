@@ -1,13 +1,12 @@
 package com.afa.springserver.repositories;
 
-import com.afa.model.FamilySize;
-import com.afa.model.UserEntity;
-import com.afa.repositories.UserRepository;
+import com.afa.model.CourseEntity;
+import com.afa.model.PersonalDescriptorEntity;
+import com.afa.repositories.CourseRepository;
+import com.afa.repositories.PersonalDescriptorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,12 +14,13 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Need to set up in-memory database, but too much effort right now.
  */
 @SpringBootTest
-class UserRepositoryTests {
-    UserEntity testEntity = new UserEntity("TestEntity@aol.com", "test", LocalDate.now(), FamilySize.SMALL);
-    UserEntity response;
+class PersonalDescriptorRepositoryTests {
+
+    PersonalDescriptorEntity testEntity = new PersonalDescriptorEntity("TestEntity");
+    PersonalDescriptorEntity response;
 
     @Autowired
-    private UserRepository repo;
+    private PersonalDescriptorRepository repo;
 
     @Test
     void repoIsNotNull() {
@@ -36,7 +36,7 @@ class UserRepositoryTests {
     @Test
     public void testRead() {
         repo.saveAndFlush(testEntity);
-        response = repo.findByEmail(testEntity.getEmail());
+        response = repo.findByDescriptor(testEntity.getDescriptor());
         assertThat(testEntity.equals(response));
         repo.delete(testEntity);
     }
@@ -45,7 +45,7 @@ class UserRepositoryTests {
     public void testDrop() {
         repo.saveAndFlush(testEntity);
         repo.delete(testEntity);
-        response = repo.findByEmail(testEntity.getEmail());
+        response = repo.findByDescriptor(testEntity.getDescriptor());
         assertThat(response).isNull();
     }
 }

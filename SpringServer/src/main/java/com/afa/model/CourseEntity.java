@@ -15,7 +15,6 @@ public class CourseEntity implements Serializable {
     private String course;
 
     public CourseEntity() {
-
     }
 
     public CourseEntity(String course) {

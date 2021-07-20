@@ -18,36 +18,40 @@ public class UserCourseRelationshipEntity {
     @JoinColumn(name="user_email", referencedColumnName="email")
     private UserEntity user;
 
-    public String getCourse() {
-        return course.getCourse();
+    public UserCourseRelationshipEntity() {
+    }
+
+    public UserCourseRelationshipEntity(UserEntity user, CourseEntity course) {
+        this.user = user;
+        this.course = course;
+    }
+
+    public CourseEntity getCourse() {
+        return course;
     }
 
     public void setCourse(CourseEntity course) {
         this.course = course;
     }
 
-    public CourseEntity getCourseEntity() { return this.course; }
+    public String getCourseName() { return course.getCourse(); }
 
-    public String getUserEmail() {
-        return user.getEmail();
-    }
+    public UserEntity getUser() { return this.user; }
 
-    public void setUserEmail(UserEntity newUser) {
-        this.user = newUser;
-    }
+    public void setUser(UserEntity newUser) { this.user = newUser; }
 
-    public UserEntity getUserEntity() { return this.user; }
+    public String getUserEmail() { return user.getEmail(); }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserCourseRelationshipEntity that = (UserCourseRelationshipEntity) o;
-        return Objects.equals(course, that.course) && Objects.equals(user.getEmail(), that.getUserEmail());
+        return Objects.equals(course, that.course) && Objects.equals(user, that.getUser());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(course, user.getEmail());
+        return Objects.hash(course, user);
     }
 }

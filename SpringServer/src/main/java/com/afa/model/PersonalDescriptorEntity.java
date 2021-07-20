@@ -13,6 +13,13 @@ public class PersonalDescriptorEntity {
     @Column(name = "descriptor")
     private String descriptor;
 
+    public PersonalDescriptorEntity() {
+    }
+
+    public PersonalDescriptorEntity(String descriptor) {
+        this.descriptor = descriptor;
+    }
+
     public String getDescriptor() {
         return descriptor;
     }

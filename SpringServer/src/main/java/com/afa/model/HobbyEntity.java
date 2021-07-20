@@ -13,6 +13,13 @@ public class HobbyEntity {
     @Column(name = "hobby")
     private String hobby;
 
+    public HobbyEntity() {
+    }
+
+    public HobbyEntity(String hobby) {
+        this.hobby = hobby;
+    }
+
     public String getHobby() {
         return hobby;
     }

@@ -13,6 +13,13 @@ public class FamilyEntity {
     @Column(name = "name")
     private String name;
 
+    public FamilyEntity() {
+    }
+
+    public FamilyEntity(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
