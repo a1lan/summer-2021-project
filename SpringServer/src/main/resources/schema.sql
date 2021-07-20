@@ -79,16 +79,16 @@ create or replace table user_family_relationship
         on delete cascade on update cascade
 );
 
-create or replace view view_simple_user as
-select email, forename, profile_pic_link
-from user
-order by email asc;
-
-create or replace view view_families as
-select f.family_name, f.role, u.email, u.forename, u.profile_pic_link
-from user as u
-         INNER JOIN user_family_relationship as f on u.email = f.user_email
-order by f.family_name asc;
+# create or replace view view_simple_user as
+# select email, forename, profile_pic_link
+# from user
+# order by email asc;
+#
+# create or replace view view_families as
+# select f.family_name, f.role, u.email, u.forename, u.profile_pic_link
+# from user as u
+#          INNER JOIN user_family_relationship as f on u.email = f.user_email
+# order by f.family_name asc;
 
 create or replace trigger user_max_courses_trigger before insert on user_course_relationship for each row
 begin
