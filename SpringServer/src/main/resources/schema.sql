@@ -4,7 +4,7 @@ create or replace table user
     forename varchar(256) not null,
     date_of_birth date not null,
     profile_pic_link varchar(256),
-    ideal_family_size enum('small ~ 4', 'medium ~ 8', 'large ~ 10'),
+    ideal_family_size enum('SMALL', 'MEDIUM', 'LARGE'),
     cookie varchar(256),
     primary key (email),
     CONSTRAINT email_at_check check (1 < locate('@', email) AND locate('@', email) < char_length(email))

@@ -2,6 +2,7 @@ package com.afa.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -33,6 +34,18 @@ public class UserEntity {
     @Column(name = "cookie")
     private String cookie;
 
+    public UserEntity() {
+
+    }
+
+    public UserEntity(String email, String forename, LocalDate dateOfBirth, FamilySize idealFamilySize) {
+        this.email = email;
+        this.forename = forename;
+        this.dateOfBirth = Date.valueOf(dateOfBirth);
+        this.idealFamilySize = idealFamilySize;
+    }
+
+
     public String getEmail() {
         return email;
     }
@@ -49,8 +62,8 @@ public class UserEntity {
         this.forename = forename;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth.toLocalDate();
     }
 
     public void setDateOfBirth(Date dateOfBirth) {
@@ -97,6 +110,3 @@ public class UserEntity {
         return Objects.hash(email, forename, dateOfBirth, profilePicLink, idealFamilySize);
     }
 }
-
-
-enum FamilySize { SMALL, MEDIUM, LARGE };
