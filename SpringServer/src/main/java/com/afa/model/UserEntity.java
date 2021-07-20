@@ -1,5 +1,7 @@
 package com.afa.model;
 
+import com.afa.enums.FamilySize;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDate;

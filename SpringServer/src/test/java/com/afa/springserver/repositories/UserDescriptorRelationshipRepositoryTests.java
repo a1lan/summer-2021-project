@@ -1,5 +1,6 @@
 package com.afa.springserver.repositories;
 
+import com.afa.enums.FamilySize;
 import com.afa.model.*;
 import com.afa.repositories.*;
 import org.junit.jupiter.api.AfterEach;

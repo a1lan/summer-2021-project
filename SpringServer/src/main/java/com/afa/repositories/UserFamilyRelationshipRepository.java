@@ -1,5 +1,6 @@
 package com.afa.repositories;
 
+import com.afa.enums.FamilyRole;
 import com.afa.model.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

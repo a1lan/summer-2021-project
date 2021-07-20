@@ -1,5 +1,7 @@
 package com.afa.model;
 
+import com.afa.enums.FamilyRole;
+
 import javax.persistence.*;
 import java.util.Objects;
 

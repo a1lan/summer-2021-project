@@ -1,3 +1,3 @@
-package com.afa.model;
+package com.afa.enums;
 
 public enum FamilyRole { PARENT, CHILD, GRANDPARENT, UNCLE, AUNT, COUSIN };

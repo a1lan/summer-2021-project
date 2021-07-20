@@ -1,7 +1,7 @@
 package com.afa.springserver.repositories;
 
 import com.afa.model.CourseEntity;
-import com.afa.model.FamilySize;
+import com.afa.enums.FamilySize;
 import com.afa.model.UserCourseRelationshipEntity;
 import com.afa.model.UserEntity;
 import com.afa.repositories.CourseRepository;
