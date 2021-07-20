@@ -18,25 +18,33 @@ public class UserDescriptorRelationshipEntity {
     @JoinColumn(name="user_email", referencedColumnName="email")
     private UserEntity user;
 
-    public String getDescriptor() {
-        return descriptor.getDescriptor();
+    public UserDescriptorRelationshipEntity() {
+    }
+
+    public UserDescriptorRelationshipEntity(UserEntity user, PersonalDescriptorEntity descriptor) {
+        this.user = user;
+        this.descriptor = descriptor;
+    }
+
+    public PersonalDescriptorEntity getDescriptor() {
+        return descriptor;
     }
 
     public void setDescriptor(PersonalDescriptorEntity descriptor) {
         this.descriptor = descriptor;
     }
 
-    public PersonalDescriptorEntity getDescriptorEntity() { return this.descriptor; }
+    public String getDescriptorName() { return this.descriptor.getDescriptor(); }
 
     public String getUserEmail() {
         return user.getEmail();
     }
 
-    public void setUserEmail(UserEntity newUser) {
+    public void setUser(UserEntity newUser) {
         this.user = newUser;
     }
 
-    public UserEntity getUserEntity() { return this.user; }
+    public UserEntity getUser() { return this.user; }
 
     @Override
     public boolean equals(Object o) {

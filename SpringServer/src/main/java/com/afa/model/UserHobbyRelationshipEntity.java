@@ -17,9 +17,15 @@ public class UserHobbyRelationshipEntity {
     @JoinColumn(name="user_email", referencedColumnName="email")
     private UserEntity user;
 
+    public UserHobbyRelationshipEntity() {
+    }
 
+    public UserHobbyRelationshipEntity(UserEntity user, HobbyEntity hobby) {
+        this.user = user;
+        this.hobby = hobby;
+    }
 
-    public String getHobby() {
+    public String getHobbyName() {
         return hobby.getHobby();
     }
 
@@ -27,17 +33,17 @@ public class UserHobbyRelationshipEntity {
         this.hobby = hobby;
     }
 
-    public HobbyEntity getHobbyEntity() { return this.hobby; }
+    public HobbyEntity getHobby() { return this.hobby; }
 
     public String getUserEmail() {
         return user.getEmail();
     }
 
-    public void setUserEmail(UserEntity newUser) {
+    public void setUser(UserEntity newUser) {
         this.user = newUser;
     }
 
-    public UserEntity getUserEntity() { return this.user; }
+    public UserEntity getUser() { return this.user; }
 
     @Override
     public boolean equals(Object o) {

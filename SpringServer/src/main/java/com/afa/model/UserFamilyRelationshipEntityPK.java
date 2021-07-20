@@ -5,32 +5,15 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class UserFamilyRelationshipEntityPK implements Serializable {
+    private String family;
+    private String user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Id
-    @JoinColumn(name="family_name", referencedColumnName="name")
-    private FamilyEntity family;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Id
-    @JoinColumn(name="user_email", referencedColumnName="email")
-    private UserEntity user;
-
-
-    public String getFamilyName() {
-        return this.family.getName();
+    public UserFamilyRelationshipEntityPK() {
     }
 
-    public void setFamily(FamilyEntity newFamily) {
-        this.family = newFamily;
-    }
-
-    public String getUserEmail() {
-        return this.user.getEmail();
-    }
-
-    public void setUser(UserEntity newUser) {
-        this.user = newUser;
+    public UserFamilyRelationshipEntityPK(String user, String family) {
+        this.user = user;
+        this.family = family;
     }
 
     @Override
@@ -38,12 +21,12 @@ public class UserFamilyRelationshipEntityPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserFamilyRelationshipEntityPK that = (UserFamilyRelationshipEntityPK) o;
-        return Objects.equals(family.getName(), that.family.getName()) && Objects.equals(user.getEmail(),
-                that.user.getEmail());
+        return Objects.equals(family, that.family) && Objects.equals(user,
+                that.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(family.getName(), user.getEmail());
+        return Objects.hash(family, user);
     }
 }

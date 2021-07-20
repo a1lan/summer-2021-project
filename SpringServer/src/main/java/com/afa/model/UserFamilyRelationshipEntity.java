@@ -22,6 +22,15 @@ public class UserFamilyRelationshipEntity {
     @Enumerated(EnumType.STRING)
     private FamilyRole role;
 
+    public UserFamilyRelationshipEntity() {
+    }
+
+    public UserFamilyRelationshipEntity(UserEntity user, FamilyEntity family, FamilyRole role) {
+        this.user = user;
+        this.family = family;
+        this.role = role;
+    }
+
     public String getFamilyName() {
         return this.family.getName();
     }
@@ -30,7 +39,7 @@ public class UserFamilyRelationshipEntity {
         this.family = newFamily;
     }
 
-    public FamilyEntity getFamliyEntity() { return this.family; }
+    public FamilyEntity getFamily() { return this.family; }
 
     public String getUserEmail() {
         return this.user.getEmail();
@@ -40,7 +49,7 @@ public class UserFamilyRelationshipEntity {
         this.user = newUser;
     }
 
-    public UserEntity getUserEntity() { return this.user; }
+    public UserEntity getUser() { return this.user; }
 
     public FamilyRole getRole() {
         return role;
@@ -64,6 +73,3 @@ public class UserFamilyRelationshipEntity {
         return Objects.hash(family.getName(), user.getEmail(), role);
     }
 }
-
-
-enum FamilyRole { SMALL, MEDIUM, LARGE };

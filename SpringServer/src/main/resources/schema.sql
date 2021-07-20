@@ -71,7 +71,7 @@ create or replace table user_family_relationship
 (
     family_name varchar(256) not null,
     user_email varchar(256) not null,
-    role enum('parent', 'child', 'grandparent', 'uncle', 'aunt', 'cousin') not null,
+    role enum('PARENT', 'CHILD', 'GRANDPARENT', 'UNCLE', 'AUNT', 'COUSIN') not null,
     primary key (family_name, user_email),
     CONSTRAINT family_name_fk foreign key (family_name) references family(name)
         on delete cascade on update cascade,
