@@ -13,11 +13,7 @@ import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Need to set up in-memory database, but too much effort right now.
- */
-@SpringBootTest
-class UserDescriptorRelationshipRepositoryTests {
+class UserDescriptorRelationshipRepositoryTests implements RepositoryTestInterface {
 
     UserEntity testUserEntity = new UserEntity("TestEntity@aol.com", "test", LocalDate.now(), FamilySize.SMALL);
     UserEntity userResponse;

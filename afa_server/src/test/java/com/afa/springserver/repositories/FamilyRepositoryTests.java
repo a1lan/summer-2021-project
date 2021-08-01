@@ -4,15 +4,10 @@ import com.afa.model.FamilyEntity;
 import com.afa.repositories.FamilyRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Need to set up in-memory database, but too much effort right now.
- */
-@SpringBootTest
-class FamilyRepositoryTests {
+class FamilyRepositoryTests implements RepositoryTestInterface {
     FamilyEntity testEntity = new FamilyEntity("test");
     FamilyEntity response;
 

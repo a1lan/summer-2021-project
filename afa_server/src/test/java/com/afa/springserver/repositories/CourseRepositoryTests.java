@@ -4,14 +4,10 @@ import com.afa.model.CourseEntity;
 import com.afa.repositories.CourseRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import static org.assertj.core.api.Assertions.*;
 
-/**
- * Need to set up in-memory database, but too much effort right now.
- */
-@SpringBootTest
-class CourseRepositoryTests {
+import static org.assertj.core.api.Assertions.assertThat;
+
+class CourseRepositoryTests implements RepositoryTestInterface {
 
     CourseEntity testEntity = new CourseEntity("TestEntity");
     CourseEntity response;

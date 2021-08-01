@@ -1,20 +1,13 @@
 package com.afa.springserver.repositories;
 
 import com.afa.model.HobbyEntity;
-import com.afa.model.PersonalDescriptorEntity;
 import com.afa.repositories.HobbyRepository;
-import com.afa.repositories.PersonalDescriptorRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Need to set up in-memory database, but too much effort right now.
- */
-@SpringBootTest
-class HobbyRepositoryTests {
+class HobbyRepositoryTests implements RepositoryTestInterface {
 
     HobbyEntity testEntity = new HobbyEntity("TestEntity");
     HobbyEntity response;

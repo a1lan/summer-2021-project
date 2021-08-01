@@ -1,4 +1,3 @@
-USE afa_db;
 SET character_set_server = utf8mb4;
 
 # DROP DATABASE afa_db;

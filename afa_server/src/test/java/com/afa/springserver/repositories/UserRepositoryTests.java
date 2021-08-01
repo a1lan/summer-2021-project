@@ -5,17 +5,12 @@ import com.afa.model.UserEntity;
 import com.afa.repositories.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- * Need to set up in-memory database, but too much effort right now.
- */
-@SpringBootTest
-class UserRepositoryTests {
+class UserRepositoryTests implements RepositoryTestInterface {
     UserEntity testEntity = new UserEntity("TestEntity@aol.com", "test", LocalDate.now(), FamilySize.SMALL);
     UserEntity response;
 
