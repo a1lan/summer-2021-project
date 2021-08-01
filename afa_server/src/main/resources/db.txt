@@ -1,3 +1,17 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 create or replace table user
 (
     email varchar(256) not null,

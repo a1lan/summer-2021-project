@@ -9,12 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.afa</groupId>
-    <artifactId>SpringServer</artifactId>
+    <artifactId>afa_server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringServer</name>
+    <name>afa_server</name>
     <description>Family app server</description>
     <properties>
         <java.version>1.8</java.version>
+        <skipTests>true</skipTests>
     </properties>
     <dependencies>
         <dependency>
@@ -104,6 +105,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <skipITs>${skipTests}</skipITs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
